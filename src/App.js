@@ -6,10 +6,12 @@ function App() {
    <main>
     <h1>$400<span>.00</span></h1>
     <form>
+      
       <div className="basic">
     <input type="text" placeholder={'+200 new samsung tv'} />
     <input type="datetime-local" />
     </div>
+    
     <div className="description">
     <input type= "text" placeholder={'description'} />
     </div>
@@ -25,7 +27,7 @@ function App() {
 
         </div>
         <div className="right">
-          <div className='price'>$500</div>
+          <div className='price red'>-$500</div>
           <div className='datetime'>2023-12-25 15:45</div>
 
         </div>
@@ -34,12 +36,12 @@ function App() {
     </div>
     <div className="transaction">
         <div className="left">
-          <div className="name">New Samsung TV</div>
+          <div className="name">New website</div>
           <div className="description">it was time for new tv</div>
 
         </div>
         <div className="right">
-          <div className='price'>$500</div>
+          <div className='price green'>+$500</div>
           <div className='datetime'>2023-12-25 15:45</div>
 
         </div>
@@ -48,12 +50,12 @@ function App() {
     </div>
     <div className="transaction">
         <div className="left">
-          <div className="name">New Samsung TV</div>
+          <div className="name">New phone</div>
           <div className="description">it was time for new tv</div>
 
         </div>
         <div className="right">
-          <div className='price'>$500</div>
+          <div className='price red'>-$500</div>
           <div className='datetime'>2023-12-25 15:45</div>
 
         </div>
