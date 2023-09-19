@@ -3,9 +3,9 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [name,setName] = useState({initialState:''});
-  const [datetime,setDatetime] = useState({initialState:''});
-  const [description,setDescription] = useState({initialState:''});
+  const [name,setName] = useState('');
+  const [datetime,setDatetime] = useState('');
+  const [description,setDescription] = useState('');
   function addNewTransaction(){
     
   }
