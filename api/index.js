@@ -12,6 +12,9 @@ app.get('/api/test', (req,res) => {
 });
 
 app.post('/api/transaction',(req,res) => {
+    const {name, description,datetime} = res.body;
+    
+
     res.json(req.body);
 
 });
