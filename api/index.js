@@ -17,3 +17,5 @@ app.post('/api/transaction',(req,res) => {
 });
 
 app.listen(4000);
+
+//db pw: zNbRyJBKfepcn6kB
