@@ -1,12 +1,18 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
+
 
 function App() {
   const [name,setName] = useState('');
   const [datetime,setDatetime] = useState('');
   const [description,setDescription] = useState('');
-  const [transaction,setTransaction] = useState('');
+  const [transactions,setTransactions] = useState('');
+
+  useEffect(() =>{
+    getTransactions().then(setTransactions);
+    
+  },[]);
 
   async function getTransactions(){
     const url = "http://localhost:3000/api" + "/transaction";
@@ -66,6 +72,7 @@ function App() {
     </div>
     
     <button type="submit">Add new transaction</button>
+ 
 
     </form>
 
@@ -84,34 +91,7 @@ function App() {
 
 
     </div>
-    <div className="transaction">
-        <div className="left">
-          <div className="name">New website</div>
-          <div className="description">it was time for new tv</div>
-
-        </div>
-        <div className="right">
-          <div className='price green'>+$500</div>
-          <div className='datetime'>2023-12-25 15:45</div>
-
-        </div>
-
-
-    </div>
-    <div className="transaction">
-        <div className="left">
-          <div className="name">New phone</div>
-          <div className="description">it was time for new tv</div>
-
-        </div>
-        <div className="right">
-          <div className='price red'>-$500</div>
-          <div className='datetime'>2023-12-25 15:45</div>
-
-        </div>
-
-
-    </div>
+  
       
     </div>
 
