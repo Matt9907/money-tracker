@@ -26,6 +26,7 @@ function App() {
     ev.preventDefault();
     const url = process.env.REACT_APP_API_URL + '/transaction';
     const price = name.split(" ")[0];
+    
     fetch(url, {
       method: 'POST',
       headers: {'Content-type': 'application/json'},
@@ -54,7 +55,10 @@ function App() {
 
   return (
    <main>
-    <h1>$400<span>.00</span></h1>
+    <h1>
+      {balance}
+      <span>.00</span>
+      </h1>
     <form onSubmit={addNewTransaction}>
       
       <div className="basic">
@@ -62,7 +66,7 @@ function App() {
     type="text" 
     value = {name}
     onChange={ev => setName(ev.target.value)}
-    placeholder={'+200 new samsung tv'} />
+    placeholder={'name and price'} />
     
     <input value={datetime} 
     onChange={ev => setDatetime(ev.target.value)} 
