@@ -20,6 +20,13 @@ app.post('/api/transaction',async (req,res) => {
         console.log("Connecting to Mongo");
         await mongoose.connect(process.env.MONGO_URL);
 
+        if(
+            !req.body.name || !req.body.description || !req.body.datetime || !req.body.price
+        ){
+            res.status(400).send("Missing Input Fields");
+            return;
+        }
+
     const {name, description,datetime,price} = req.body;
     const transaction = await Transaction.create({name, description,datetime,price});
     
