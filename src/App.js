@@ -8,24 +8,27 @@ function App() {
   const [description,setDescription] = useState('');
   function addNewTransaction(ev){
     ev.preventDefault();
-
-    
     const url = process.env.REACT_APP_API_URL + '/transaction';
-    
+    const price = name.split(" ")[0];
     fetch(url, {
       method: 'POST',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({
-        name,
+        price,
+        name:name.substring(price.length+1),
         description,
         datetime})
     }).then(response =>{
       response.json().then((json) =>{
+        setName("");
+        setDescription("");
+        setDatetime("");
         console.log('result',json);
       });
     });
     
   }
+
   return (
    <main>
     <h1>$400<span>.00</span></h1>
