@@ -28,7 +28,12 @@ app.post('/api/transaction',async (req,res) => {
         }
 
     const {name, description,datetime,price} = req.body;
-    const transaction = await Transaction.create({name, description,datetime,price});
+    const transaction = await Transaction.create({
+        name, 
+        description,
+        datetime,
+        price
+    });
     
 
     res.json(transaction);
