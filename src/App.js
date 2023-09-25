@@ -46,6 +46,12 @@ function App() {
     
   }
 
+  let balance = 0;
+  for(const transaction of transactions){
+    balance = balance + transaction.price;
+  }
+  balance = balance.toFixed(2);
+
   return (
    <main>
     <h1>$400<span>.00</span></h1>
@@ -77,24 +83,27 @@ function App() {
     </form>
 
     <div className="transactions">
-      <div className="transaction">
-        <div className="left">
-          <div className="name">New Samsung TV</div>
-          <div className="description">it was time for new tv</div>
+      {transactions.length > 0 && 
+      transactions.map((transaction,index) =>(
+        <div key = {index} className='transaction'>
+          <div className='left'>
+            <div className='name'>{transaction.name}</div>
+            <div className='description'>{transaction.description}</div>
 
+          </div>
+          <div className='right'>
+            <div
+            className={
+              "Price" + (transaction.price < 0 ? "red" :"green")
+            }
+            >
+              {transaction.price}
+          </div>
+          <div className='datetime'>{transaction.datetime}</div>
         </div>
-        <div className="right">
-          <div className='price red'>-$500</div>
-          <div className='datetime'>2023-12-25 15:45</div>
-
-        </div>
-
-
-    </div>
-  
-      
-    </div>
-
+    </div>  
+ ))}
+   </div>         
    </main>
   );
 }
