@@ -56,7 +56,7 @@ function App() {
   return (
    <main>
     <h1>
-      {balance}
+      $500
       <span>.00</span>
       </h1>
     <form onSubmit={addNewTransaction}>
@@ -97,9 +97,7 @@ function App() {
           </div>
           <div className='right'>
             <div
-            className={
-              "Price" + (transaction.price < 0 ? "red" :"green")
-            }
+            className={"Price" + (transaction.price < 0 ? "red" :"green")}
             >
               {transaction.price}
           </div>
