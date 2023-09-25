@@ -6,6 +6,16 @@ function App() {
   const [name,setName] = useState('');
   const [datetime,setDatetime] = useState('');
   const [description,setDescription] = useState('');
+  const [transaction,setTransaction] = useState('');
+
+  async function getTransactions(){
+    const url = "http://localhost:3000/api" + "/transaction";
+    const response = await fetch(url);
+    return await response.json();
+  }
+
+
+
   function addNewTransaction(ev){
     ev.preventDefault();
     const url = process.env.REACT_APP_API_URL + '/transaction';
