@@ -87,8 +87,9 @@ function App() {
  
 
     </form>
-
+//Transactions not displaying from Mongo
     <div className="transactions">
+      Show transaction 
       {transactions.length > 0 && 
       transactions.map((transaction,index) =>(
         <div key = {index} className='transaction'>
