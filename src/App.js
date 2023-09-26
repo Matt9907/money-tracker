@@ -36,7 +36,7 @@ function App() {
         description,
         datetime
       }),
-    }).then(response =>{
+    }).then((response) =>{
       response.json().then((json) =>{
         setName("");
         setDescription("");
@@ -64,6 +64,7 @@ function App() {
     <form onSubmit={addNewTransaction}>
       
       <div className="basic">
+    
     <input 
     type="text" 
     value = {name}
