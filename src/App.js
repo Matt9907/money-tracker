@@ -85,20 +85,25 @@ function App() {
     </div>
     
     <button type="submit">Add new transaction</button>
-    {transactions.length}
+
 
     </form>
     <div className='transactions'>
+      {transactions.length >0 && transactions.map(transaction =>(
+        
+
+   
       <div className='transaction'>
         <div className='left'>
-          <div className='name'>New Samsung TV</div>
-          <div className='description'>need new tv</div>
+          <div className='name'>{transaction.name}</div>
+          <div className='description'>{transaction.description}</div>
         </div>
         <div className='right'>
-          <div className='price red'>-500</div>
-          <div className='datetime'>2022-12-28 15:45</div>
+          <div className={'price'}>{transaction.price}</div>
+          <div className='datetime'>{transaction.datetime}</div>
         </div>
       </div>
+         ))}
    </div>         
    </main>
   );
