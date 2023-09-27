@@ -7,7 +7,7 @@ function App() {
   const [name,setName] = useState('');
   const [datetime,setDatetime] = useState('');
   const [description,setDescription] = useState('');
-  const [transactions,setTransactions] = useState('');
+  const [transactions,setTransactions] = useState([]);
 
   useEffect(() =>{
     getTransactions().then(setTransactions);
@@ -15,7 +15,7 @@ function App() {
   },[]);
 
   async function getTransactions(){
-    const url = "http://localhost:3000/api" + "/transaction";
+    const url = process.env.REACT_APP_API_URL + "/transaction";
     const response = await fetch(url);
     return await response.json();
   }
@@ -85,6 +85,7 @@ function App() {
     </div>
     
     <button type="submit">Add new transaction</button>
+    {transactions.length}
  
 
     </form>
