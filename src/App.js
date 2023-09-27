@@ -15,7 +15,7 @@ function App() {
   },[]);
 
   async function getTransactions(){
-    const url = process.env.REACT_APP_API_URL + "/transaction";
+    const url = process.env.REACT_APP_API_URL  +'/transaction';
     const response = await fetch(url);
     return await response.json();
   }
@@ -24,7 +24,7 @@ function App() {
 
   function addNewTransaction(ev){
     ev.preventDefault();
-    const url = process.env.REACT_APP_API_URL + '/transaction';
+    const url = process.env.REACT_APP_API_URL  +'/transaction';
     const price = name.split(" ")[0];
     
     fetch(url, {
@@ -89,17 +89,16 @@ function App() {
 
     </form>
     <div className='transactions'>
-      {transactions.length >0 && transactions.map(transaction =>(
-        
-
-   
-      <div className='transaction'>
+      {transactions.length >0 && transactions.map((transaction, index) =>(
+      <div key={index} className='transaction'>
         <div className='left'>
           <div className='name'>{transaction.name}</div>
           <div className='description'>{transaction.description}</div>
         </div>
         <div className='right'>
-          <div className={'price'}>{transaction.price}</div>
+          <div className={'price' + (transaction.price < 0 ? "red" : "green")}>
+            {transaction.price}
+            </div>
           <div className='datetime'>{transaction.datetime}</div>
         </div>
       </div>
