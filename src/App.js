@@ -89,7 +89,9 @@ function App() {
 
     </form>
     <div className='transactions'>
-      {transactions.length >0 && transactions.map((transaction, index) =>(
+
+      No Clue on display
+      {transactions.length > 0 && transactions.map((transaction, index) =>(
       <div key={index} className='transaction'>
         <div className='left'>
           <div className='name'>{transaction.name}</div>
