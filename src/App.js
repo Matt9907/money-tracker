@@ -90,7 +90,7 @@ function App() {
     </form>
     <div className='transactions'>
 
-      No Clue on display
+      No Clue on display, Will come back to this bug in the future
       {transactions.length > 0 && transactions.map((transaction, index) =>(
       <div key={index} className='transaction'>
         <div className='left'>
